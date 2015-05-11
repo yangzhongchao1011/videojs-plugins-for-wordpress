@@ -6,8 +6,8 @@
 /*
 Plugin Name: Video.js - WordPress上的HTML5视频播放器
 Plugin URI: http://videojs.com/
-Description: Self-hosted responsive HTML5 video for WordPress, built on the widely used Video.js HTML5 video player library. Allows you to embed video in your post or page using HTML5 with Flash fallback support for non-HTML5 browsers.
-Author: <a href="http://www.nosecreekweb.ca">Dustin Lammiman</a>, <a href="http://steveheffernan.com">Steve Heffernan</a>, <a href="http://www.yangzhongchao.com">汉化羊种草</a>
+Description: WordPress上自托管响应式HTML5视频播放器，建立在广泛使用的Video.js HTML5视频播放器库。为您嵌入视频的文章或页面提供HTML5或非HTML5浏览器的Flash后备视频支持。
+Author: <a href="http://www.nosecreekweb.ca">Dustin Lammiman</a>, <a href="http://steveheffernan.com">Steve Heffernan</a>, <a href="http://www.yangzhongchao.com">羊种草汉化</a>
 Version: 4.5.0
 */
 
@@ -103,9 +103,9 @@ function video_shortcode($atts, $content=null){
 		'webm' => '',
 		'ogg' => '',
 		'youtube' => '',
-		'poster' => 'http://7xica1.com1.z0.glb.clouddn.com/mlbg.png',
-		'width' => '790',
-		'height' => '444',
+		'poster' => '',
+		'width' => '640',
+		'height' => '264',
 		'preload' => $options['videojs_preload'],
 		'autoplay' => $options['videojs_autoplay'],
 		'loop' => '',
@@ -287,7 +287,8 @@ add_action('init', 'video_js_button');
 function register_video_js_button($buttons) {
 	array_push($buttons, "|", "videojs");
 	$options = get_option('videojs_options');
-	echo('<div style="display:none"><input type="hidden" id="videojs-autoplay-default" value="' . $options['videojs_autoplay'] . '"><input type="hidden" id="videojs-preload-default" value="' . $options['videojs_preload'] . '"></div>'); //the default values from the admin screen, to be used by our javascript
+	//the default values from the admin screen, to be used by our javascript
+	echo('<div style="display:none"><input type="hidden" id="videojs-autoplay-default" value="' . $options['videojs_autoplay'] . '"><input type="hidden" id="videojs-preload-default" value="' . $options['videojs_preload'] . '"></div>'); 
 	return $buttons;
 }
 

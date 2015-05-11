@@ -35,7 +35,7 @@ function videojs_settings() {
 	}
 	?>
 	<div class="wrap">
-	<h2>Video.js Settings</h2>
+	<h2>Video.js 设置</h2>
 	
 	<form method="post" action="options.php">
 	<?php
@@ -45,7 +45,7 @@ function videojs_settings() {
 	<p class="submit">
 	<input type="submit" class="button-primary" value="<?php _e('Save Changes') ?>" />
 	</p>
-	<h2>Using Video.js</h2>
+	<h2>使用 Video.js</h2>
 	<?php echo file_get_contents(plugin_dir_path( __FILE__ ) . 'help.html'); ?>
 	</form>
 	</div>

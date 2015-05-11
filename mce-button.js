@@ -2,13 +2,13 @@
 	tinymce.create('tinymce.plugins.VideoJS', {
 		init: function(ed, url) {
 			ed.addButton('videojs', {
-				title: 'Insert HTML5 Video',
+				title: '插入HTML5视频',
 				image: url+'/video-js.png',
 				onclick: function() {
 					var width = jQuery(window).width(), H = jQuery(window).height(), W = ( 720 < width ) ? 720 : width;
 					W = W - 80;
 					H = H - 124;
-					tb_show('Insert Video.js HTML5 Video', '#TB_inline?inlineId=videoJSpopup&width=' + W + '&height=' + H);
+					tb_show('插入HTML5视频', '#TB_inline?inlineId=videoJSpopup&width=' + W + '&height=' + H);
 					jQuery("#TB_window").animate({
 						height: H + 40 + 'px'
 					});
@@ -71,7 +71,7 @@
 			<tr>\
 				<th><label for="videojs-poster">封面图片</label></th>\
 				<td><input type="text" name="videojs-poster" id="videojs-poster"><br>\
-				<small>视频封面的位置</small></td>\
+				<small>视频封面图片的位置</small></td>\
 			</tr>\
 			<tr>\
 				<th><label for="videojs-width">宽</label></th>\
